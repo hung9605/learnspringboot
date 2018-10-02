@@ -14,12 +14,14 @@
   <div id="login-box">
   <div class="left">
     <h1>Đăng Kí</h1>
-    
-    <input type="text" name="username" placeholder="Username" />
+    <form method="post" action="register" commandName="register">
+    <input type="text" name="userName" placeholder="Username" />
     <input type="text" name="email" placeholder="E-mail" />
-    <input type="password" name="password" placeholder="Password" />
+    <input type="password" name="passWord" placeholder="Password" />
     <input type="password" name="password2" placeholder="Retype password" />
     <input type="submit" name="SignUp" value="Đăng Kí" />
+    
+    </form>
       <a href="login"><button class="btnregister">Đăng nhập</button></a>
   </div>
   

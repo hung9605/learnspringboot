@@ -1,18 +1,29 @@
 package com.example.demo.Model.Entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="image")
 public class Image {
+	@Id
+	@GeneratedValue
+	@Column(name="iD")
 	private String iD;
+	@Column(name="linkimage")
 	private String linkImage;
-	private String idd;
-	private String idp;
+	@Column(name="createup")
 	private String createUp;
+	@Column(name="updateup")
 	private String updateUp;
-	public Image(String iD, String linkImage, String idd, String idp, String createUp, String updateUp) {
+	public Image(String iD, String linkImage, String createUp, String updateUp) {
 		super();
 		this.iD = iD;
 		this.linkImage = linkImage;
-		this.idd = idd;
-		this.idp = idp;
+
 		this.createUp = createUp;
 		this.updateUp = updateUp;
 	}
@@ -31,18 +42,7 @@ public class Image {
 	public void setLinkImage(String linkImage) {
 		this.linkImage = linkImage;
 	}
-	public String getIdd() {
-		return idd;
-	}
-	public void setIdd(String idd) {
-		this.idd = idd;
-	}
-	public String getIdp() {
-		return idp;
-	}
-	public void setIdp(String idp) {
-		this.idp = idp;
-	}
+	
 	public String getCreateUp() {
 		return createUp;
 	}

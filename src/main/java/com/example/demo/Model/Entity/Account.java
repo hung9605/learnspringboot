@@ -1,5 +1,7 @@
 package com.example.demo.Model.Entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,22 +9,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Accounts")
-public class Account {
+@Table(name="accounts")
+public class Account implements Serializable {
 	@Id
+	@GeneratedValue
 	@Column(name="iD")
-	private String id;
+	private int id;
 	@Column(name="username")
 	private String userName;
 	@Column(name="password")
 	private String passWord;
 	@Column(name="quyen")
-	private boolean quyen;
+	private int quyen;
 	@Column(name="create_up")
 	private String createUp;
 	@Column(name="update_up")
 	private String updateUp;
-	public Account(String id, String userName, String passWord, boolean quyen, String createUp, String updateUp) {
+	public Account(int id, String userName, String passWord, int quyen, String createUp, String updateUp) {
 		super();
 		this.id = id;
 		this.userName = userName;
@@ -34,10 +37,10 @@ public class Account {
 	public Account() {
 		super();
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUserName() {
@@ -52,10 +55,10 @@ public class Account {
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
 	}
-	public boolean isQuyen() {
+	public int isQuyen() {
 		return quyen;
 	}
-	public void setQuyen(boolean quyen) {
+	public void setQuyen(int quyen) {
 		this.quyen = quyen;
 	}
 	public String getCreateUp() {
